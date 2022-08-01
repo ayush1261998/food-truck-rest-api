@@ -2,11 +2,6 @@
 import MySQLdb
 from flask import request, jsonify
 import flask
-from flask_googlemaps import GoogleMaps
-from flask_googlemaps import get_address, get_coordinates
-
-#from flask_googlemaps import GoogleMaps
-API_KEY = 'AIzaSyAHu5-l3lWDBSpmMiYC_tsBQR5taO1GCvE'
 app = flask.Flask(__name__)
 app.config["DEBUG"] = True
 #GoogleMaps(app, key="AIzaSyAHu5-l3lWDBSpmMiYC_tsBQR5taO1GCvE")
@@ -78,26 +73,4 @@ def api_filter():
     result = cur.fetchall()
     return jsonify(result)
 
-# @app.route('/api/v1/foodtrucks/address', methods=['GET'])
-# def api_address():
-#     Latitude = query_parameters.get('Latitude')
-#     Longitude = query_parameters.get('Longitude')
-#     Applicant = query_parameters.get('Applicant')
-#
-#     query = "SELECT Latitude, Longitude FROM Mobile_Food_Facility_Permit WHERE Applicant=(%s)"
-#     to_filter = []
-#
-#     print(get_address(API_KEY,22.4761596,88.4149326))
-#     return '''Prototype API for gathering info '''
-
-# @app.route("/api/v1/foodtrucks/address")
-# def mapview():
-#     # creating a map in the view
-#     mymap = Map(
-#         identifier="view-side",
-#         lat=37.4419,
-#         lng=-122.1419,
-#         markers=[(37.4419, -122.1419)]
-#     )
-#
 app.run()
