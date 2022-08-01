@@ -4,7 +4,6 @@ from flask import request, jsonify
 import flask
 app = flask.Flask(__name__)
 app.config["DEBUG"] = True
-#GoogleMaps(app, key="AIzaSyAHu5-l3lWDBSpmMiYC_tsBQR5taO1GCvE")
 
 def dict_factory(cursor, row):
     d = {}
